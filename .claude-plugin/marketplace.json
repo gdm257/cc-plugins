@@ -173,7 +173,7 @@
       "lspServers": {
         "typescript": {
           "command": "bunx",
-          "args": ["typescript-language-server", "--stdio"],
+          "args": ["-p", "typescript", "-p", "typescript-language-server", "typescript-language-server", "--stdio"],
           "extensionToLanguage": {
             ".ts": "typescript",
             ".tsx": "typescriptreact",
@@ -201,7 +201,7 @@
       "lspServers": {
         "typescript": {
           "command": "npx",
-          "args": ["typescript-language-server", "--stdio"],
+          "args": ["--package", "typescript", "--package", "typescript-language-server", "typescript-language-server", "--stdio"],
           "extensionToLanguage": {
             ".ts": "typescript",
             ".tsx": "typescriptreact",
