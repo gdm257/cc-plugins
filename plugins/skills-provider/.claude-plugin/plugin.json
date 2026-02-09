@@ -1,0 +1,9 @@
+{
+  "name": "skills-provider",
+  "description": "A Plugin that provides Agent Skills",
+  "version": "1.0.0",
+  "author": {
+    "name": "gdm257",
+    "email": "gdm@disroot.org"
+  }
+}
