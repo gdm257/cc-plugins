@@ -8,6 +8,17 @@
   },
   "plugins": [
     {
+      "name": "agent-skills",
+      "description": "Best practice of agent skills",
+      "version": "1.0.0",
+      "author": {
+        "name": "gdm257",
+        "email": "gdm@disroot.org"
+      },
+      "source": "./skills",
+      "category": "development"
+    },
+    {
       "name": "php-lsp-bunx",
       "description": "PHP language server (Intelephense) for code intelligence",
       "version": "1.0.0",

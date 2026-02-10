@@ -1,5 +1,5 @@
 {
-  "name": "skills-provider",
+  "name": "agent-skills",
   "description": "A Plugin that provides Agent Skills",
   "version": "1.0.0",
   "author": {
