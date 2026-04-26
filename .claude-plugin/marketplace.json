@@ -105,6 +105,35 @@
       }
     },
     {
+      "name": "powershell-lsp",
+      "version": "1.0.0",
+      "author": {
+        "name": "gdm257",
+        "email": "gdm@disroot.org"
+      },
+      "source": "./plugins/powershell-lsp",
+      "category": "development",
+      "strict": false,
+      "lspServers": {
+        "powershell": {
+          "command": "pwsh",
+          "args": [
+            "-NoLogo",
+            "-NoProfile",
+            "-Command",
+            "Start-EditorServices -HostName 'Claude Code' -HostProfileId 'ClaudeCode' -HostVersion '1.0.0' -Stdio -LogPath '/dev/null' -LogLevel 'None' -EnableConsoleRepl"
+          ],
+          "extensionToLanguage": {
+            ".ps1": "powershell",
+            ".psm1": "powershell",
+            ".psd1": "powershell"
+          },
+          "transport": "stdio",
+          "maxRestarts": 3
+        }
+      }
+    },
+    {
       "name": "ruby-lsp",
       "description": "Ruby language server for code intelligence and analysis",
       "version": "1.0.0",
