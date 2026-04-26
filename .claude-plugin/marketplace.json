@@ -105,6 +105,55 @@
       }
     },
     {
+      "name": "ruby-lsp",
+      "description": "Ruby language server for code intelligence and analysis",
+      "version": "1.0.0",
+      "author": {
+        "name": "gdm257",
+        "email": "gdm@disroot.org"
+      },
+      "source": "./plugins/ruby-lsp",
+      "category": "development",
+      "strict": false,
+      "lspServers": {
+        "ruby-lsp": {
+          "command": "ruby-lsp",
+          "extensionToLanguage": {
+            ".rb": "ruby",
+            ".rake": "ruby",
+            ".gemspec": "ruby",
+            ".ru": "ruby",
+            ".erb": "erb"
+          }
+        }
+      }
+    },
+    {
+      "name": "ruby-lsp-gem-exec",
+      "description": "Ruby language server for code intelligence and analysis",
+      "version": "1.0.0",
+      "author": {
+        "name": "gdm257",
+        "email": "gdm@disroot.org"
+      },
+      "source": "./plugins/ruby-lsp",
+      "category": "development",
+      "strict": false,
+      "lspServers": {
+        "ruby-lsp": {
+          "command": "gem",
+          "args": ["exec", "ruby-lsp"],
+          "extensionToLanguage": {
+            ".rb": "ruby",
+            ".rake": "ruby",
+            ".gemspec": "ruby",
+            ".ru": "ruby",
+            ".erb": "erb"
+          }
+        }
+      }
+    },
+    {
       "name": "ty-lsp",
       "description": "Python language server (ty) for type checking (mypy) and code intelligence (pyright)",
       "version": "1.0.0",
@@ -184,7 +233,14 @@
       "lspServers": {
         "typescript": {
           "command": "bunx",
-          "args": ["-p", "typescript", "-p", "typescript-language-server", "typescript-language-server", "--stdio"],
+          "args": [
+            "-p",
+            "typescript",
+            "-p",
+            "typescript-language-server",
+            "typescript-language-server",
+            "--stdio"
+          ],
           "extensionToLanguage": {
             ".ts": "typescript",
             ".tsx": "typescriptreact",
@@ -212,7 +268,14 @@
       "lspServers": {
         "typescript": {
           "command": "npx",
-          "args": ["--package", "typescript", "--package", "typescript-language-server", "typescript-language-server", "--stdio"],
+          "args": [
+            "--package",
+            "typescript",
+            "--package",
+            "typescript-language-server",
+            "typescript-language-server",
+            "--stdio"
+          ],
           "extensionToLanguage": {
             ".ts": "typescript",
             ".tsx": "typescriptreact",
