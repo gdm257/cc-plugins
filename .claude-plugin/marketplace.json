@@ -15,6 +15,7 @@
         "name": "gdm257",
         "email": "gdm@disroot.org"
       },
+      "source": "./plugins/agent-skills",
       "category": "development"
     },
     {
