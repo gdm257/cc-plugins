@@ -19,6 +19,13 @@
       "category": "development"
     },
     {
+      "name": "beads-plan-skills",
+      "description": "beads-plan skills",
+      "version": "0.1.1",
+      "source": "./plugins/beads-plan-skills",
+      "category": "development"
+    },
+    {
       "name": "openspec-claude-skills",
       "description": "openspec skills for claude",
       "version": "1.3.1",
