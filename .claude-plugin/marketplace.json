@@ -19,6 +19,20 @@
       "category": "development"
     },
     {
+      "name": "openspec-claude-skills",
+      "description": "openspec skills for claude",
+      "version": "1.3.1",
+      "source": "./plugins/openspec-claude-skills",
+      "category": "development"
+    },
+    {
+      "name": "openspec-openspec-skills",
+      "version": "1.3.1",
+      "description": "openspec skills for opencode",
+      "source": "./plugins/openspec-openspec-skills",
+      "category": "development"
+    },
+    {
       "name": "php-lsp-bunx",
       "description": "PHP language server (Intelephense) for code intelligence",
       "version": "1.0.0",
