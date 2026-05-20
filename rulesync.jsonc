@@ -1,0 +1,13 @@
+{
+  "$schema": "https://github.com/dyoshikawa/rulesync/releases/latest/download/config-schema.json",
+  "targets": ["claudecode", "opencode"],
+  "features": ["rules", "ignore", "mcp", "subagents", "hooks"],
+  "global": true,
+  "delete": true,
+  "verbose": false,
+  "silent": false,
+  "simulateCommands": false,
+  "simulateSubagents": false,
+  "simulateSkills": false,
+  "gitignoreTargetsOnly": true,
+}
