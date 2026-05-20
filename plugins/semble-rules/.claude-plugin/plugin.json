@@ -1,0 +1,7 @@
+{
+  "name": "semble-rules",
+  "description": "rules of MinishLab/semble",
+  "category": "development",
+  "version": "0.1.10",
+  "agents": ["./agents/", "./subagents/"]
+}

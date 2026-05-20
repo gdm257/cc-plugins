@@ -34,10 +34,14 @@
     },
     {
       "name": "openspec-openspec-skills",
-      "version": "1.3.1",
       "description": "openspec skills for opencode",
+      "version": "1.3.1",
       "source": "./plugins/openspec-openspec-skills",
       "category": "development"
+    },
+    {
+      "name": "semble-rules",
+      "source": "./plugins/semble-rules"
     },
     {
       "name": "php-lsp-bunx",
