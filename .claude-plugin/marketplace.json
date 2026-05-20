@@ -40,6 +40,10 @@
       "category": "development"
     },
     {
+      "name": "codegraph-rules",
+      "source": "./plugins/codegraph-rules"
+    },
+    {
       "name": "semble-rules",
       "source": "./plugins/semble-rules"
     },
