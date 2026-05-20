@@ -1,3 +1,7 @@
+---
+root: true
+---
+
 ## Code Search
 
 Use `semble search` to find code by describing what it does or naming a symbol/identifier, instead of grep:
