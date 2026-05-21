@@ -1,10 +1,13 @@
 {
   "$schema": "https://github.com/dyoshikawa/rulesync/releases/latest/download/config-schema.json",
-  "targets": ["claudecode", "opencode"],
-  "features": ["mcp", "subagents", "hooks"],
+  // "features": ["mcp", "subagents", "hooks", "permissions"],
+  "targets": {
+    "claudecode": ["mcp", "subagents", "hooks", "permissions"],
+    "opencode": ["mcp", "subagents", "hooks"],
+  },
   "global": true,
   "delete": false,
-  "verbose": false,
+  "verbose": true,
   "silent": false,
   "simulateCommands": false,
   "simulateSubagents": false,
