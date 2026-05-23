@@ -19,6 +19,10 @@
       "category": "development"
     },
     {
+      "name": "archon-skills",
+      "source": "./plugins/beads-plan-skills"
+    },
+    {
       "name": "beads-plan-skills",
       "description": "beads-plan skills",
       "version": "0.1.1",

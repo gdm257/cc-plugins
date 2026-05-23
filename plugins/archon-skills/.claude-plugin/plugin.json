@@ -1,0 +1,7 @@
+{
+  "name": "archon-skills",
+  "description": "skills of archon",
+  "category": "development",
+  "version": "0.3.12",
+  "agents": ["./agents/", "./subagents/"]
+}
