@@ -2,8 +2,7 @@
 name: kiro-steering
 description: Maintain .kiro/steering/ as persistent project memory (bootstrap/sync). Use when initializing or updating steering documents.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
-metadata:
-  shared-rules: "steering-principles.md"
+metadata: {}
 ---
 
 # kiro-steering Skill
@@ -32,7 +31,7 @@ If steering context is already available from conversation, skip redundant file 
 
 - For Bootstrap mode: Use embedded templates below
 - For Sync mode: Read all existing `.kiro/steering/*.md` files
-- Read `rules/steering-principles.md` from this skill's directory for steering principles
+- Steering principles are embedded in the "Steering Principles" section below
 
 ## Scenario Detection
 
@@ -61,9 +60,8 @@ After all parallel research completes, synthesize patterns for steering files.
    - Product: Purpose, value, core capabilities
    - Tech: Frameworks, decisions, conventions
    - Structure: Organization, naming, imports
-4. Generate steering files (follow templates)
-5. Load principles from `rules/steering-principles.md` from this skill's directory
-6. Present summary for review
+4. Generate steering files (follow templates and steering principles below)
+5. Present summary for review
 
 **Focus**: Patterns that guide decisions, not catalogs of files/dependencies.
 
@@ -84,16 +82,79 @@ After all parallel research completes, synthesize patterns for steering files.
 
 ---
 
-## Granularity Principle
+## Steering Principles
 
-From `rules/steering-principles.md` (in this skill's directory):
+Steering files are **project memory**, not exhaustive specifications.
 
+### Golden Rule
 > "If new code follows existing patterns, steering shouldn't need updating."
 
-Document patterns and principles, not exhaustive lists.
+### What to Document
+- Organizational patterns (feature-first, layered)
+- Naming conventions (PascalCase rules)
+- Import strategies (absolute vs relative)
+- Architectural decisions (state management)
+- Technology standards (key frameworks)
 
-**Bad**: List every file in directory tree
-**Good**: Describe organization pattern with examples
+### What to Avoid
+- Complete file listings
+- Every component description
+- All dependencies
+- Implementation details
+- Agent-specific tooling directories (e.g. `.cursor/`, `.gemini/`, `.claude/`)
+- Detailed documentation of `.kiro/` metadata directories (settings, automation)
+
+### Example Comparison
+
+**Bad** (Specification-like):
+```markdown
+- /components/Button.tsx - Primary button with variants
+- /components/Input.tsx - Text input with validation
+- /components/Modal.tsx - Modal dialog
+... (50+ files)
+```
+
+**Good** (Project Memory):
+```markdown
+## UI Components (`/components/ui/`)
+Reusable, design-system aligned primitives
+- Named by function (Button, Input, Modal)
+- Export component + TypeScript interface
+- No business logic
+```
+
+### Security
+
+Never include:
+- API keys, passwords, credentials
+- Database URLs, internal IPs
+- Secrets or sensitive data
+
+### Quality Standards
+
+- **Single domain**: One topic per file
+- **Concrete examples**: Show patterns with code
+- **Explain rationale**: Why decisions were made
+- **Maintainable size**: 100-200 lines typical
+
+### Preservation (when updating)
+
+- Preserve user sections and custom examples
+- Additive by default (add, don't replace)
+- Add `updated_at` timestamp
+- Note why changes were made
+
+### File-Specific Focus
+
+- **product.md**: Purpose, value, business context (not exhaustive features)
+- **tech.md**: Key frameworks, standards, conventions (not all dependencies)
+- **structure.md**: Organization patterns, naming rules (not directory trees)
+- **Custom files**: Specialized patterns (API, testing, security, etc.)
+
+### Notes
+
+- Light references to `.kiro/specs/` and `.kiro/steering/` are acceptable; avoid other `.kiro/` directories
+- Custom files equally important as core files
 
 ## Tool Guidance
 
@@ -154,11 +215,10 @@ Steering Updated
 ## Notes
 
 - All `.kiro/steering/*.md` loaded as project memory
-- Templates and principles are external for customization
+- Templates and principles are embedded in this file (no external dependencies)
 - Focus on patterns, not catalogs
 - "Golden Rule": New code following patterns shouldn't require steering updates
 - `.kiro/settings/` content should NOT be documented in steering files (settings are metadata, not project knowledge)
-- Templates are embedded below (no external template dependency)
 
 ---
 
