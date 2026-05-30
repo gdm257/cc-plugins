@@ -1,26 +1,31 @@
-## Code Search
+<!-- SEMBLE_START -->
+## Semble Code Search
 
-Use `semble search` to find code by describing what it does or naming a symbol/identifier, instead of grep:
+A `semble` MCP server is available with two tools:
+- `mcp__semble__search` — search the codebase with a natural-language or code query.
+- `mcp__semble__find_related` — find code similar to a specific file and line.
 
-​```bash
+Always call `mcp__semble__search` before using Grep, Glob, or Read to explore the codebase. Use Grep/Glob/Read only for exact path lookup, exhaustive literal matches, or when the returned chunk lacks enough context.
+
+Pass `--content docs` to search documentation and prose, `--content config` for config files, or `--content all` to search code, docs, and config together.
+
+For CLI fallback or sub-agents without MCP access, use:
+
+```bash
 semble search "authentication flow" ./my-project
-semble search "save_pretrained" ./my-project
-semble search "save model to disk" ./my-project --top-k 10
-​```
-
-Use `semble find-related` to discover code similar to a known location (pass `file_path` and `line` from a prior search result):
-
-​```bash
+semble search "deployment guide" ./my-project --content docs
+semble search "database host port" ./my-project --content config
 semble find-related src/auth.py 42 ./my-project
-​```
+semble search "save model to disk" ./my-project --top-k 10
+```
 
-`path` defaults to the current directory when omitted; git URLs are accepted.
-
-If `semble` is not on `$PATH`, use `uvx --from "semble[mcp]" semble` in its place.
+The index is built on first run and cached automatically. If `semble` is not on `$PATH`, use `uvx --from "semble[mcp]" semble`.
 
 ### Workflow
 
-1. Start with `semble search` to find relevant chunks.
-2. Inspect full files only when the returned chunk is not enough context.
-3. Optionally use `semble find-related` with a promising result's `file_path` and `line` to discover related implementations.
-4. Use grep only when you need exhaustive literal matches or quick confirmation of an exact string.
+1. Start with `mcp__semble__search` to find relevant chunks.
+2. Use `--content docs` for documentation, `--content config` for config files, or `--content all` for everything.
+3. Inspect full files only when the returned chunk does not give enough context.
+4. Optionally use `mcp__semble__find_related` with a promising result's `file_path` and `line` to discover related implementations.
+5. Use Grep/Glob/Read only when you need exhaustive literal matches or quick confirmation of an exact string.
+<!-- SEMBLE_END -->
