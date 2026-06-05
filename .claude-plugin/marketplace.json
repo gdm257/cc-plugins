@@ -44,6 +44,10 @@
       "category": "development"
     },
     {
+      "name": "code-review-graph",
+      "source": "./plugins/code-review-graph"
+    },
+    {
       "name": "codegraph-rules",
       "source": "./plugins/codegraph-rules"
     },

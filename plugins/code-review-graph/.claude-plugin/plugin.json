@@ -1,0 +1,7 @@
+{
+  "name": "code-review-graph",
+  "description": "code-review-graph plugin",
+  "category": "development",
+  "version": "2.3.5",
+  "agents": ["./agents/", "./subagents/"]
+}
