@@ -55,7 +55,7 @@ After all parallel research completes, synthesize findings for steering document
    - Focus on patterns, not exhaustive lists
    - Keep to 100-200 lines (2-3 minute read)
 
-5. **Create file** in `.kiro/steering/{name}.md`
+5. **Create file** in `.claude/rules/{name}.md`
 
 ## Available Templates
 
@@ -89,7 +89,6 @@ Steering files are **project memory**, not exhaustive specifications.
 - All dependencies
 - Implementation details
 - Agent-specific tooling directories (e.g. `.cursor/`, `.gemini/`, `.claude/`)
-- Detailed documentation of `.kiro/` metadata directories (settings, automation)
 
 ### Example Comparison
 
@@ -143,7 +142,6 @@ Never include:
 - Templates are starting points, customize as needed
 - Follow same granularity principles as core steering
 - All steering files loaded as project memory
-- Light references to `.kiro/specs/` and `.kiro/steering/` are acceptable; avoid other `.kiro/` directories
 - Custom files equally important as core files
 
 ## Tool Guidance
@@ -163,7 +161,7 @@ Chat summary with file location (file created directly).
 Custom Steering Created
 
 ## Created:
-- .kiro/steering/api-standards.md
+- .claude/rules/api-standards.md
 
 ## Based On:
 - Template: api-standards.md
@@ -204,7 +202,6 @@ Review and customize as needed.
 - All steering files loaded as project memory
 - Custom files equally important as core files
 - Avoid documenting agent-specific tooling directories (e.g. `.cursor/`, `.gemini/`, `.claude/`)
-- Light references to `.kiro/specs/` and `.kiro/steering/` are acceptable; avoid other `.kiro/` directories
 
 ---
 

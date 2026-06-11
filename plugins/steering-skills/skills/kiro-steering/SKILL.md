@@ -1,6 +1,6 @@
 ---
 name: kiro-steering
-description: Maintain .kiro/steering/ as persistent project memory (bootstrap/sync). Use when initializing or updating steering documents.
+description: Maintain .claude/rules/ as persistent project memory (bootstrap/sync). Use when initializing or updating steering documents.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 metadata: {}
 ---
@@ -8,10 +8,10 @@ metadata: {}
 # kiro-steering Skill
 
 ## Role
-You are a specialized skill for maintaining `.kiro/steering/` as persistent project memory.
+You are a specialized skill for maintaining `.claude/rules/` as persistent project memory.
 
 ## Core Mission
-**Role**: Maintain `.kiro/steering/` as persistent project memory.
+**Role**: Maintain `.claude/rules/` as persistent project memory.
 
 **Mission**:
 - Bootstrap: Generate core steering from codebase (first-time)
@@ -21,7 +21,7 @@ You are a specialized skill for maintaining `.kiro/steering/` as persistent proj
 **Success Criteria**:
 - Steering captures patterns and principles, not exhaustive lists
 - Code drift detected and reported
-- All `.kiro/steering/*.md` treated equally (core + custom)
+- All `.claude/rules/*.md` treated equally (core + custom)
 
 ## Execution Steps
 
@@ -30,12 +30,12 @@ You are a specialized skill for maintaining `.kiro/steering/` as persistent proj
 If steering context is already available from conversation, skip redundant file reads.
 
 - For Bootstrap mode: Use embedded templates below
-- For Sync mode: Read all existing `.kiro/steering/*.md` files
+- For Sync mode: Read all existing `.claude/rules/*.md` files
 - Steering principles are embedded in the "Steering Principles" section below
 
 ## Scenario Detection
 
-Check `.kiro/steering/` status:
+Check `.claude/rules/` status:
 
 **Bootstrap Mode**: Empty OR missing core files (product.md, tech.md, structure.md)
 **Sync Mode**: All core files exist
@@ -69,7 +69,7 @@ After all parallel research completes, synthesize patterns for steering files.
 
 ## Sync Flow
 
-1. Load all existing steering (`.kiro/steering/*.md`)
+1. Load all existing steering (`.claude/rules/*.md`)
 2. Analyze codebase for changes (JIT)
 3. Detect drift:
    - **Steering → Code**: Missing elements → Warning
@@ -102,7 +102,7 @@ Steering files are **project memory**, not exhaustive specifications.
 - All dependencies
 - Implementation details
 - Agent-specific tooling directories (e.g. `.cursor/`, `.gemini/`, `.claude/`)
-- Detailed documentation of `.kiro/` metadata directories (settings, automation)
+- Detailed documentation of metadata directories (settings, automation)
 
 ### Example Comparison
 
@@ -153,7 +153,6 @@ Never include:
 
 ### Notes
 
-- Light references to `.kiro/specs/` and `.kiro/steering/` are acceptable; avoid other `.kiro/` directories
 - Custom files equally important as core files
 
 ## Tool Guidance
@@ -214,11 +213,10 @@ Steering Updated
 
 ## Notes
 
-- All `.kiro/steering/*.md` loaded as project memory
+- All `.claude/rules/*.md` loaded as project memory
 - Templates and principles are embedded in this file (no external dependencies)
 - Focus on patterns, not catalogs
 - "Golden Rule": New code following patterns shouldn't require steering updates
-- `.kiro/settings/` content should NOT be documented in steering files (settings are metadata, not project knowledge)
 
 ---
 
