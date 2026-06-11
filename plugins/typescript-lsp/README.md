@@ -19,6 +19,12 @@ Or with yarn:
 yarn global add typescript-language-server typescript
 ```
 
+Or run on-demand with pnpm (no global install):
+
+```bash
+pnpm --package=typescript --package=typescript-language-server dlx typescript-language-server --stdio
+```
+
 ## More Information
 - [typescript-language-server on npm](https://www.npmjs.com/package/typescript-language-server)
 - [GitHub Repository](https://github.com/typescript-language-server/typescript-language-server)

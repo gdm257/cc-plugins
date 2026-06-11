@@ -19,6 +19,12 @@ Or with yarn:
 yarn global add intelephense
 ```
 
+Or run on-demand with pnpm (no global install):
+
+```bash
+pnpm dlx intelephense --stdio
+```
+
 ## More Information
 - [Intelephense Website](https://intelephense.com/)
 - [Intelephense on npm](https://www.npmjs.com/package/intelephense)

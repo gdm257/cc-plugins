@@ -102,6 +102,27 @@
       }
     },
     {
+      "name": "php-lsp-pnpm",
+      "description": "PHP language server (Intelephense) for code intelligence",
+      "version": "1.0.0",
+      "author": {
+        "name": "gdm257",
+        "email": "gdm@disroot.org"
+      },
+      "source": "./plugins/php-lsp",
+      "category": "development",
+      "strict": false,
+      "lspServers": {
+        "intelephense": {
+          "command": "pnpm",
+          "args": ["dlx", "intelephense", "--stdio"],
+          "extensionToLanguage": {
+            ".php": "php"
+          }
+        }
+      }
+    },
+    {
       "name": "pyright-lsp-uvx",
       "description": "Python language server (Pyright) for type checking and code intelligence",
       "version": "1.0.0",
@@ -343,6 +364,42 @@
             "typescript",
             "--package",
             "typescript-language-server",
+            "typescript-language-server",
+            "--stdio"
+          ],
+          "extensionToLanguage": {
+            ".ts": "typescript",
+            ".tsx": "typescriptreact",
+            ".js": "javascript",
+            ".jsx": "javascriptreact",
+            ".mts": "typescript",
+            ".cts": "typescript",
+            ".mjs": "javascript",
+            ".cjs": "javascript"
+          }
+        }
+      }
+    },
+    {
+      "name": "typescript-lsp-pnpm",
+      "description": "TypeScript/JavaScript language server for enhanced code intelligence",
+      "version": "1.0.0",
+      "author": {
+        "name": "gdm257",
+        "email": "gdm@disroot.org"
+      },
+      "source": "./plugins/typescript-lsp",
+      "category": "development",
+      "strict": false,
+      "lspServers": {
+        "typescript": {
+          "command": "pnpm",
+          "args": [
+            "--package",
+            "typescript",
+            "--package",
+            "typescript-language-server",
+            "dlx",
             "typescript-language-server",
             "--stdio"
           ],
