@@ -44,6 +44,10 @@
       "category": "development"
     },
     {
+      "name": "steering-skills",
+      "source": "./plugins/steering-skills"
+    },
+    {
       "name": "code-review-graph",
       "source": "./plugins/code-review-graph"
     },
