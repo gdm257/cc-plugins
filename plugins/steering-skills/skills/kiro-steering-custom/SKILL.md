@@ -1,6 +1,6 @@
 ---
 name: kiro-steering-custom
-description: Create custom steering documents for specialized project contexts. Use when creating domain-specific steering files.
+description: Create custom steering documents for specialized project contexts. Use when creating domain-specific steering files. Supports --local to keep steering out of version control.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 metadata: {}
 ---
@@ -9,6 +9,10 @@ metadata: {}
 
 ## Role
 You are a specialized skill for creating custom steering documents beyond core files (product, tech, structure).
+
+## Options
+
+- `--local` — Keep steering out of version control. Creates `.claude/rules/steering/.gitignore` that ignores the entire steering directory. Use when steering should stay local to the developer's machine.
 
 ## Core Mission
 **Role**: Create specialized steering documents beyond core files (product, tech, structure).
@@ -55,7 +59,8 @@ After all parallel research completes, synthesize findings for steering document
    - Focus on patterns, not exhaustive lists
    - Keep to 100-200 lines (2-3 minute read)
 
-5. **Create file** in `.claude/rules/{name}.md`
+5. **Create file** in `.claude/rules/steering/{name}.md`
+6. If `--local` flag is set, create `.claude/rules/steering/.gitignore` with `*` to ignore the entire directory
 
 ## Available Templates
 
@@ -161,7 +166,8 @@ Chat summary with file location (file created directly).
 Custom Steering Created
 
 ## Created:
-- .claude/rules/api-standards.md
+- .claude/rules/steering/api-standards.md
+- .gitignore: [If --local] Ignores entire steering directory
 
 ## Based On:
 - Template: api-standards.md

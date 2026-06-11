@@ -1,6 +1,6 @@
 ---
 name: kiro-steering
-description: Maintain .claude/rules/ as persistent project memory (bootstrap/sync). Use when initializing or updating steering documents.
+description: Maintain .claude/rules/steering/ as persistent project memory (bootstrap/sync). Use when initializing or updating steering documents. Supports --local to keep steering out of version control.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 metadata: {}
 ---
@@ -8,10 +8,14 @@ metadata: {}
 # kiro-steering Skill
 
 ## Role
-You are a specialized skill for maintaining `.claude/rules/` as persistent project memory.
+You are a specialized skill for maintaining `.claude/rules/steering/` as persistent project memory.
+
+## Options
+
+- `--local` — Keep steering out of version control. Creates `.claude/rules/steering/.gitignore` that ignores the entire steering directory. Use when steering should stay local to the developer's machine.
 
 ## Core Mission
-**Role**: Maintain `.claude/rules/` as persistent project memory.
+**Role**: Maintain `.claude/rules/steering/` as persistent project memory.
 
 **Mission**:
 - Bootstrap: Generate core steering from codebase (first-time)
@@ -21,7 +25,7 @@ You are a specialized skill for maintaining `.claude/rules/` as persistent proje
 **Success Criteria**:
 - Steering captures patterns and principles, not exhaustive lists
 - Code drift detected and reported
-- All `.claude/rules/*.md` treated equally (core + custom)
+- All `.claude/rules/steering/*.md` treated equally (core + custom)
 
 ## Execution Steps
 
@@ -30,12 +34,12 @@ You are a specialized skill for maintaining `.claude/rules/` as persistent proje
 If steering context is already available from conversation, skip redundant file reads.
 
 - For Bootstrap mode: Use embedded templates below
-- For Sync mode: Read all existing `.claude/rules/*.md` files
+- For Sync mode: Read all existing `.claude/rules/steering/*.md` files
 - Steering principles are embedded in the "Steering Principles" section below
 
 ## Scenario Detection
 
-Check `.claude/rules/` status:
+Check `.claude/rules/steering/` status:
 
 **Bootstrap Mode**: Empty OR missing core files (product.md, tech.md, structure.md)
 **Sync Mode**: All core files exist
@@ -61,7 +65,8 @@ After all parallel research completes, synthesize patterns for steering files.
    - Tech: Frameworks, decisions, conventions
    - Structure: Organization, naming, imports
 4. Generate steering files (follow templates and steering principles below)
-5. Present summary for review
+5. If `--local` flag is set, create `.claude/rules/steering/.gitignore` with `*` to ignore the entire directory
+6. Present summary for review
 
 **Focus**: Patterns that guide decisions, not catalogs of files/dependencies.
 
@@ -69,7 +74,7 @@ After all parallel research completes, synthesize patterns for steering files.
 
 ## Sync Flow
 
-1. Load all existing steering (`.claude/rules/*.md`)
+1. Load all existing steering (`.claude/rules/steering/*.md`)
 2. Analyze codebase for changes (JIT)
 3. Detect drift:
    - **Steering → Code**: Missing elements → Warning
@@ -176,6 +181,7 @@ Steering Created
 - product.md: [Brief description]
 - tech.md: [Key stack]
 - structure.md: [Organization]
+- .gitignore: [If --local] Ignores entire steering directory
 
 Review and approve as Source of Truth.
 ```
@@ -213,7 +219,7 @@ Steering Updated
 
 ## Notes
 
-- All `.claude/rules/*.md` loaded as project memory
+- All `.claude/rules/steering/*.md` loaded as project memory
 - Templates and principles are embedded in this file (no external dependencies)
 - Focus on patterns, not catalogs
 - "Golden Rule": New code following patterns shouldn't require steering updates
