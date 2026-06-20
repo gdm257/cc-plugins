@@ -1,5 +1,5 @@
 ---
-name: kiro-steering-custom
+name: steering-custom
 description: Create custom steering documents for specialized project contexts. Use when creating domain-specific steering files. Supports --local to keep steering out of version control.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 metadata: {}

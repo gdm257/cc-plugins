@@ -1,5 +1,5 @@
 ---
-name: kiro-steering
+name: steering
 description: Maintain .claude/rules/steering/ as persistent project memory (bootstrap/sync). Use when initializing or updating steering documents. Supports --local to keep steering out of version control.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 metadata: {}
