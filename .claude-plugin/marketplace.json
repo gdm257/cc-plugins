@@ -30,6 +30,10 @@
       "category": "development"
     },
     {
+      "name": "cc-sdd-skills",
+      "source": "./plugins/cc-sdd-skills"
+    },
+    {
       "name": "openspec-claude-skills",
       "description": "openspec skills for claude",
       "version": "1.3.1",

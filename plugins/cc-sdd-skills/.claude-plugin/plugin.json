@@ -1,0 +1,6 @@
+{
+  "name": "cc-sdd-skills",
+  "category": "development",
+  "version": "3.0.2",
+  "agents": ["./agents/", "./subagents/"]
+}
