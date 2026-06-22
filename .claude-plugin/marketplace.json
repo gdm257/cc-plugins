@@ -56,12 +56,12 @@
       "source": "./plugins/code-review-graph"
     },
     {
-      "name": "codegraph-rules",
-      "source": "./plugins/codegraph-rules"
+      "name": "codegraph",
+      "source": "./plugins/codegraph"
     },
     {
-      "name": "semble-rules",
-      "source": "./plugins/semble-rules"
+      "name": "semble",
+      "source": "./plugins/semble"
     },
     {
       "name": "php-lsp-bunx",
