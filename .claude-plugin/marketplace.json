@@ -50,6 +50,10 @@
       "source": "./plugins/code-review-graph"
     },
     {
+      "name": "codebase-memory",
+      "source": "./plugins/codebase-memory"
+    },
+    {
       "name": "codegraph",
       "source": "./plugins/codegraph"
     },

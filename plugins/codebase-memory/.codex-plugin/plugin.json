@@ -1,0 +1,9 @@
+{
+  "name": "codebase-memory",
+  "version": "0.8.1",
+  "category": "Development",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "apps": "./.app.json"
+}
