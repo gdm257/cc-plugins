@@ -1,0 +1,9 @@
+{
+  "name": "trellis",
+  "version": "0.6.5",
+  "category": "Development",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "apps": "./.app.json"
+}

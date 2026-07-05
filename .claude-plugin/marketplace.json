@@ -62,6 +62,10 @@
       "source": "./plugins/semble"
     },
     {
+      "name": "trellis",
+      "source": "./plugins/trellis"
+    },
+    {
       "name": "php-lsp-bunx",
       "description": "PHP language server (Intelephense) for code intelligence",
       "version": "1.0.0",

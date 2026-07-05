@@ -1,0 +1,5 @@
+version: "3"
+tasks:
+  skills:
+    cmds:
+      - trellis init --codex
