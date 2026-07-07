@@ -1,6 +1,7 @@
 {
-  "name": "trellis",
-  "version": "0.6.5",
+  "name": "code-review-graph",
+  "description": "code-review-graph plugin",
+  "version": "2.3.5",
   "policy": {
     "installation": "AVAILABLE",
     "authentication": "ON_INSTALL"
@@ -8,6 +9,5 @@
   "category": "Development",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
-  "hooks": "./hooks/hooks.json",
-  "apps": "./.app.json"
+  "hooks": "./hooks/hooks.json"
 }

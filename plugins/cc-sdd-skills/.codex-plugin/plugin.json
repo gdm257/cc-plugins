@@ -1,0 +1,10 @@
+{
+  "name": "cc-sdd-skills",
+  "version": "3.0.2",
+  "policy": {
+    "installation": "AVAILABLE",
+    "authentication": "ON_INSTALL"
+  },
+  "category": "Development",
+  "skills": "./skills/"
+}

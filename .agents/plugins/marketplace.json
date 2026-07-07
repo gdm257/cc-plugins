@@ -1,0 +1,92 @@
+{
+  "name": "cc-257",
+  "interface": {
+    "displayName": "CC-257"
+  },
+  "plugins": [
+    {
+      "name": "agent-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agent-skills"
+      }
+    },
+    {
+      "name": "archon-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/beads-plan-skills"
+      }
+    },
+    {
+      "name": "beads-plan-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/beads-plan-skills"
+      }
+    },
+    {
+      "name": "cc-sdd-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/cc-sdd-skills"
+      }
+    },
+    {
+      "name": "openspec-claude-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/openspec-claude-skills"
+      }
+    },
+    {
+      "name": "openspec-openspec-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/openspec-opencode-skills"
+      }
+    },
+    {
+      "name": "steering-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/steering-skills"
+      }
+    },
+    {
+      "name": "code-review-graph",
+      "source": {
+        "source": "local",
+        "path": "./plugins/code-review-graph"
+      }
+    },
+    {
+      "name": "codebase-memory",
+      "source": {
+        "source": "local",
+        "path": "./plugins/codebase-memory"
+      }
+    },
+    {
+      "name": "codegraph",
+      "source": {
+        "source": "local",
+        "path": "./plugins/codegraph"
+      }
+    },
+    {
+      "name": "semble",
+      "source": {
+        "source": "local",
+        "path": "./plugins/semble"
+      }
+    },
+    {
+      "name": "trellis",
+      "source": {
+        "source": "local",
+        "path": "./plugins/trellis"
+      }
+    }
+  ]
+}

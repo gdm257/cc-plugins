@@ -1,0 +1,11 @@
+{
+  "name": "codegraph",
+  "description": "rules of colbymchenry/codegraph",
+  "version": "0.7.10",
+  "policy": {
+    "installation": "AVAILABLE",
+    "authentication": "ON_INSTALL"
+  },
+  "category": "Development",
+  "mcpServers": "./.mcp.json"
+}

@@ -9,25 +9,15 @@
   "plugins": [
     {
       "name": "agent-skills",
-      "description": "Best practice of agent skills",
-      "version": "1.0.0",
-      "author": {
-        "name": "gdm257",
-        "email": "gdm@disroot.org"
-      },
-      "source": "./plugins/agent-skills",
-      "category": "development"
+      "source": "./plugins/agent-skills"
     },
     {
       "name": "archon-skills",
-      "source": "./plugins/beads-plan-skills"
+      "source": "./plugins/archon-skills"
     },
     {
       "name": "beads-plan-skills",
-      "description": "beads-plan skills",
-      "version": "0.1.1",
-      "source": "./plugins/beads-plan-skills",
-      "category": "development"
+      "source": "./plugins/beads-plan-skills"
     },
     {
       "name": "cc-sdd-skills",
