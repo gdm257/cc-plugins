@@ -12,7 +12,7 @@ You are a specialized skill for creating custom steering documents beyond core f
 
 ## Options
 
-- `--local` — Keep steering out of version control. Creates `.claude/rules/steering/.gitignore` that ignores the entire steering directory. Use when steering should stay local to the developer's machine.
+- `--local` — Keep steering out of version control. Creates `.ruler/.gitignore` that ignores the entire steering directory. Use when steering should stay local to the developer's machine.
 
 ## Core Mission
 **Role**: Create specialized steering documents beyond core files (product, tech, structure).
@@ -59,8 +59,8 @@ After all parallel research completes, synthesize findings for steering document
    - Focus on patterns, not exhaustive lists
    - Keep to 100-200 lines (2-3 minute read)
 
-5. **Create file** in `.claude/rules/steering/{name}.md`
-6. If `--local` flag is set, create `.claude/rules/steering/.gitignore` with `*` to ignore the entire directory
+5. **Create file** in `.ruler/{name}.md`
+6. If `--local` flag is set, create `.ruler/.gitignore` with `*` to ignore the entire directory
 
 ## Available Templates
 
@@ -166,7 +166,7 @@ Chat summary with file location (file created directly).
 Custom Steering Created
 
 ## Created:
-- .claude/rules/steering/api-standards.md
+- .ruler/api-standards.md
 - .gitignore: [If --local] Ignores entire steering directory
 
 ## Based On:
