@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Grep|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v codebase-memory-mcp &>/dev/null || exit 0; codebase-memory-mcp hook-augment 2>/dev/null; exit 0",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
