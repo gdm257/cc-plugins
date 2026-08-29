@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uvx trellis-runtime inject-workflow-state",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "^(?:trellis-implement|trellis-check|trellis-research)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv trellis-runtime inject-subagent-context",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

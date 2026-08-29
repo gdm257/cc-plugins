@@ -27,13 +27,13 @@ The bundled document describes the full Trellis system, including commands such 
 
   | Project-local command | Global equivalent |
   |---|---|
-  | `python ./.trellis/scripts/task.py …` | `uvx --from trellis-runtime trellis-task …` |
-  | `python ./.trellis/scripts/get_context.py …` | `uvx --from trellis-runtime trellis-get-context …` |
-  | `python ./.trellis/scripts/add_session.py …` | `uvx --from trellis-runtime trellis-add-session …` |
-  | `python ./.trellis/scripts/init_developer.py …` | `uvx --from trellis-runtime trellis-init-developer …` |
-  | `python ./.trellis/scripts/get_developer.py …` | `uvx --from trellis-runtime trellis-get-developer …` |
+  | `python ./.trellis/scripts/task.py …` | `uvx trellis-runtime task …` |
+  | `python ./.trellis/scripts/get_context.py …` | `uvx trellis-runtime get-context …` |
+  | `python ./.trellis/scripts/add_session.py …` | `uvx trellis-runtime add-session …` |
+  | `python ./.trellis/scripts/init_developer.py …` | `uvx trellis-runtime init-developer …` |
+  | `python ./.trellis/scripts/get_developer.py …` | `uvx trellis-runtime get-developer …` |
 
-  Caveat: `trellis-get-context --mode phase` / `--step` parses a **project-local** `.trellis/workflow.md`; without one it cannot render the phase index — read the bundled copy instead.
+  Caveat: `uvx trellis-runtime get-context --mode phase` / `--step` parses a **project-local** `.trellis/workflow.md`; without one it cannot render the phase index — read the bundled copy instead.
 - **Specs, tasks, and workspace do not exist yet.** `.trellis/spec/`, `.trellis/tasks/`, and `.trellis/workspace/` are project-owned state created by `trellis init` (specs then grown via the `trellis-spec-bootstrap` skill). Do not fabricate their contents from this skill.
 - **Full initialization** — `npm install -g @mindfoldhq/trellis@latest`, then `trellis init -u <name>` (Node >= 18, Python >= 3.9). This generates `.trellis/` plus the platform files; afterwards the project-local `workflow.md` takes over and this fallback is no longer consulted.
 
