@@ -9,6 +9,8 @@ description: "Bundled required and optional `.trellis/` template so trellis skil
 Required (always copy from `resources/.trellis/`):
 
 - `spec/guides/`
+
+- `.gitignore`
 - `.developer` — or better, generate with `uvx trellis-runtime init-developer -u <name>` instead of copying
 
 Optional (skip if not needed):
