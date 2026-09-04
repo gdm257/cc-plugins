@@ -11,7 +11,7 @@ Required (always copy from `resources/.trellis/`):
 - `spec/guides/`
 
 - `.gitignore`
-- `.developer` — or better, generate with `uvx trellis-runtime init-developer -u <name>` instead of copying
+- `.developer` — or better, generate with `uvx trellis-runtime init-developer <name>` instead of copying
 
 Optional (skip if not needed):
 
@@ -23,7 +23,7 @@ Optional (skip if not needed):
 
 ## Developer identity
 
-Do not copy `.trellis/.developer` from the bundled templates or another project. Create it with `uvx trellis-runtime init-developer -u <name>` so the identity file is generated properly for this machine/user.
+Do not copy `.trellis/.developer` from the bundled templates or another project. Create it with `uvx trellis-runtime init-developer <name>` so the identity file is generated properly for this machine/user.
 
 ## CLI reference
 
