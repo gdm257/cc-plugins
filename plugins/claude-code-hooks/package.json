@@ -11,5 +11,10 @@
 				"default": "~/.claude/settings.json,.claude/settings.json,.claude/settings.local.json"
 			}
 		}
+	},
+	"pi": {
+		"extensions": [
+			"./hooks/pre/claude-code-hooks.ts"
+		]
 	}
 }
