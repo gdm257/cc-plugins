@@ -1,0 +1,15 @@
+{
+	"name": "claude-code-hooks",
+	"version": "1.0.0",
+	"description": "Run Claude Code hooks from Claude settings files inside omp",
+	"omp": {
+		"name": "claude-code-hooks",
+		"settings": {
+			"claudeSettingsPaths": {
+				"type": "string",
+				"description": "Comma-separated Claude Code settings files to load hooks from",
+				"default": "~/.claude/settings.json,.claude/settings.json,.claude/settings.local.json"
+			}
+		}
+	}
+}
