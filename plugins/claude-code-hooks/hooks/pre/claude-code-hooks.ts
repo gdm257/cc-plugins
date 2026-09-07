@@ -119,7 +119,7 @@
  * ❌ `OTEL_*` - exporter variables are inherited, not stripped
  * ✅ `CLAUDE_MODEL` - no such variable, matching Claude Code
  */
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
@@ -212,14 +212,51 @@ interface CommandResult {
 	code: number | null;
 }
 
+let gitBashCache: string | null | undefined;
+
+/** Windows: bash.exe hits from PATH, excluding WSL's System32 stub. */
+function whereBash(): string[] {
+	try {
+		const result = spawnSync("where", ["bash"], { encoding: "utf8" });
+		return result.status === 0 ? result.stdout.split(/\r?\n/).filter(Boolean) : [];
+	} catch {
+		return [];
+	}
+}
+
+/** Git bash path for hook commands; undefined keeps the ComSpec shell. */
+function findGitBash(): string | undefined {
+	if (process.platform !== "win32") return undefined;
+	if (gitBashCache === undefined) {
+		const pf = process.env.ProgramFiles ?? "C:\\Program Files";
+		const pf86 = process.env["ProgramFiles(x86)"] ?? `${pf} (x86)`;
+		const candidates = [
+			...whereBash(),
+			`${pf}\\Git\\bin\\bash.exe`,
+			`${pf86}\\Git\\bin\\bash.exe`,
+			process.env.LOCALAPPDATA ? `${process.env.LOCALAPPDATA}\\Programs\\Git\\bin\\bash.exe` : "",
+			process.env.USERPROFILE ? `${process.env.USERPROFILE}\\scoop\\apps\\git\\current\\bin\\bash.exe` : "",
+		];
+		gitBashCache = candidates.find(c => c && !/\\system32\\|windowsapps/i.test(c) && fs.existsSync(c)) ?? null;
+	}
+	return gitBashCache ?? undefined;
+}
+
 function runCommand(command: string, stdin: string, ctx: HookContext, timeoutMs: number): Promise<CommandResult> {
 	const { promise, resolve } = Promise.withResolvers<CommandResult>();
-	const child = spawn(command, {
-		shell: true,
-		cwd: ctx.cwd,
-		env: { ...process.env, CLAUDE_PROJECT_DIR: ctx.cwd },
-		stdio: ["pipe", "pipe", "pipe"],
-	});
+	const shell = findGitBash();
+	const child = shell
+		? spawn(shell, ["-c", command], {
+				cwd: ctx.cwd,
+				env: { ...process.env, CLAUDE_PROJECT_DIR: ctx.cwd },
+				stdio: ["pipe", "pipe", "pipe"],
+			})
+		: spawn(command, {
+				shell: true,
+				cwd: ctx.cwd,
+				env: { ...process.env, CLAUDE_PROJECT_DIR: ctx.cwd },
+				stdio: ["pipe", "pipe", "pipe"],
+			});
 	let stdout = "";
 	let stderr = "";
 	const timer = setTimeout(() => {
@@ -273,8 +310,9 @@ function parseStdout(stdout: string): { json?: ClaudeHookOutput; plainText?: str
 export function createClaudeHookEnv(onProblem: (message: string) => void = () => {}): ClaudeHookEnv {
 	return {
 		async run(event, command, ctx, timeoutMs) {
+			const projectDir = findGitBash() ? ctx.cwd.replaceAll("\\", "/") : ctx.cwd;
 			const { stdout, stderr, code } = await runCommand(
-				command.replaceAll("${CLAUDE_PROJECT_DIR}", ctx.cwd),
+				command.replaceAll("${CLAUDE_PROJECT_DIR}", projectDir),
 				buildPayload(event, ctx),
 				ctx,
 				timeoutMs,
