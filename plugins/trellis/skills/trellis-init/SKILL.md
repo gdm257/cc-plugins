@@ -11,7 +11,7 @@ Required (always copy from `resources/.trellis/`):
 - `spec/guides/`
 
 - `.gitignore`
-- `.developer` — or better, generate with `uvx trellis-runtime init-developer <name>` instead of copying
+- `.developer` — or better, generate with `uvx trellis-runtime init-developer $(git config user.name)` instead of copying
 
 Optional (skip if not needed):
 
