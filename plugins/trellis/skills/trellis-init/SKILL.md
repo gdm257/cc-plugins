@@ -3,29 +3,69 @@ name: trellis-init
 description: "Bundled required and optional `.trellis/` template so trellis skills work in projects that have not run `trellis init`. Use as a fallback whenever a trellis skill or script needs any `.trellis/*` initial files or the project has no `.trellis/` directory."
 ---
 
-Add global git attributes: `echo '.trellis/workspace/*/journal-*.md merge=union' >> ~/.config/git/attributes`
+Bootstrap or converge a project onto the canonical `.trellis/` layout. Covers both a fresh project and an existing single-repo converting to monorepo — the target state is the same.
 
-## What to copy
+## Target layout
 
-Required (always copy from `resources/.trellis/`):
+`.trellis/` always lives at the repo root, single-repo or monorepo. Items marked `# monorepo` exist only when packages are declared in `config.yaml`.
 
-- `spec/guides/`
-- `.gitignore`
-- `.developer` — or better, generate with `uvx trellis-runtime init-developer $(git config user.name)` instead of copying
-- `workspace/`
+```
+.trellis/
+├── config.yaml              # declares packages: / default_package: when monorepo
+├── .developer
+├── .version
+├── .gitignore
+├── workflow.md
+├── workspace/
+│   ├── index.md
+│   └── {developer}/         # journal-*.md, session traces
+├── spec/
+│   ├── guides/              # shared thinking guides, never per-package
+│   ├── frontend/            # single-repo: spec/<layer>/
+│   ├── backend/
+│   ├── my-app/frontend/     # monorepo: spec/<package>/<layer>/
+│   └── my-app/backend/      # monorepo
+└── tasks/
+    └── <task>/              # task.json gains a "package" field when monorepo
+```
 
-Optional (skip if not needed):
+## Fresh project
 
-- `spec/frontend/`
-- `spec/backend/`
-- `tasks/`
-- `.version`
-- `config.yaml`
-- `workflow.md` — only copy if the project will customize it; if unmodified, don't copy
+1. Copy from `resources/.trellis/`:
 
-## Developer identity
+   Required:
 
-Do not copy `.trellis/.developer` from the bundled templates or another project. Create it with `uvx trellis-runtime init-developer <name>` so the identity file is generated properly for this machine/user.
+   - `spec/guides/`
+   - `.gitignore`
+   - `workspace/`
+
+   Optional (skip if not needed):
+
+   - `spec/frontend/`, `spec/backend/`
+   - `tasks/`
+   - `.version`
+   - `config.yaml`
+   - `workflow.md` — only if the project will customize it
+
+2. Generate the developer identity — never copy `.developer` from templates or another project:
+
+   ```bash
+   uvx trellis-runtime init-developer $(git config user.name)
+   ```
+
+3. Add global git attributes once per machine:
+
+   ```bash
+   echo '.trellis/workspace/*/journal-*.md merge=union' >> ~/.config/git/attributes
+   ```
+
+## Existing repo converting to monorepo
+
+Converge onto the target layout:
+
+1. `config.yaml`: add `packages:` (name → path) and `default_package:`. Hand-editing is the supported escape hatch; `trellis init` won't overwrite an existing config.
+2. Spec layout: move `spec/<layer>/` → `spec/<package>/<layer>/` per package. `spec/guides/` stays shared at the top level. The session-start hook detects the legacy layout and warns — reorg is manual, not automated.
+3. Tasks: existing tasks without a `package` field keep working (fallback to repo scope). New tasks: `uvx trellis-runtime task create <title> --package <pkg>` (validated against config.yaml `packages`).
 
 ## CLI reference
 
