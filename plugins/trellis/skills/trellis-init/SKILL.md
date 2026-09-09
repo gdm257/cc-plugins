@@ -3,23 +3,25 @@ name: trellis-init
 description: "Bundled required and optional `.trellis/` template so trellis skills work in projects that have not run `trellis init`. Use as a fallback whenever a trellis skill or script needs any `.trellis/*` initial files or the project has no `.trellis/` directory."
 ---
 
+Add global git attributes: `echo '.trellis/workspace/*/journal-*.md merge=union' >> ~/.config/git/attributes`
 
 ## What to copy
 
 Required (always copy from `resources/.trellis/`):
 
 - `spec/guides/`
-
 - `.gitignore`
 - `.developer` — or better, generate with `uvx trellis-runtime init-developer $(git config user.name)` instead of copying
+- `workspace/`
 
 Optional (skip if not needed):
 
-- `tasks/`
 - `spec/frontend/`
 - `spec/backend/`
-- `workflow.md` — only copy if the project will customize it; if unmodified, don't copy
+- `tasks/`
 - `.version`
+- `config.yaml`
+- `workflow.md` — only copy if the project will customize it; if unmodified, don't copy
 
 ## Developer identity
 
