@@ -37,5 +37,9 @@ import { Local } from './local'     // Relative
 
 [Key architectural patterns and dependency rules]
 
+## Forbidden Patterns
+
+[Layouts and naming that must not appear, e.g., cross-feature imports, deep nesting beyond N levels]
+
 ---
 _Document patterns, not file trees. New files following patterns shouldn't require updates_

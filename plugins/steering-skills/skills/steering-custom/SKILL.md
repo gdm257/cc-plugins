@@ -65,13 +65,12 @@ After all parallel research completes, synthesize findings for steering document
 
 Templates live in `templates/` in this skill's directory. Load when needed, customize for project.
 
-1. **api-standards** - REST/GraphQL conventions, error handling
+1. **api-standards** - REST/GraphQL conventions, authentication, error handling
 2. **testing** - Test organization, mocking, coverage
-3. **security** - Auth patterns, input validation, secrets
-4. **database** - Schema design, migrations, query patterns
-5. **error-handling** - Error types, logging, retry strategies
-6. **authentication** - Auth flows, permissions, session management
-7. **deployment** - CI/CD, environments, rollback procedures
+3. **database** - Schema design, migrations, query patterns
+4. **error-handling** - Error types, logging, retry strategies
+5. **deployment** - CI/CD, environments, rollback procedures
+6. **build** - Build tooling, artifacts, codegen, reproducibility
 
 ## Steering Principles
 
@@ -126,6 +125,7 @@ Never include:
 - **Concrete examples**: Show patterns with code
 - **Explain rationale**: Why decisions were made
 - **Maintainable size**: 100-200 lines typical
+- **Common mistakes**: Record known pitfalls and forbidden patterns
 
 ### Preservation (when updating)
 

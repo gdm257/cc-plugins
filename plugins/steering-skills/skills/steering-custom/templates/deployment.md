@@ -1,54 +1,36 @@
 # Deployment Standards
 
-[Purpose: safe, repeatable releases with clear environment and pipeline patterns]
+[Purpose of this document]
 
 ## Philosophy
-- Automate; test before deploy; verify after deploy
-- Prefer incremental rollout with fast rollback
-- Production changes must be observable and reversible
+[Release principles]
 
 ## Environments
-- Dev: fast iteration; debugging enabled
-- Staging: mirrors prod; release validation
-- Prod: hardened; monitored; least privilege
+[Environments in use and their role]
 
 ## CI/CD Flow
-```
-Code → Test → Build → Scan → Deploy (staged) → Verify
-```
-Principles:
-- Fail fast on tests/scans; block deploy
-- Artifact builds are reproducible (lockfiles, pinned versions)
-- Manual approval for prod; auditable trail
+[Quality gates affecting code, not stage inventories]
 
 ## Deployment Strategies
-- Rolling: gradual instance replacement
-- Blue-Green: switch traffic between two pools
-- Canary: small % users first, expand on health
-Choose per risk profile; document default.
+[Rolling, blue-green, canary — which is default and why]
 
-## Zero-Downtime & Migrations
-- Health checks gate traffic; graceful shutdown
-- Backwards-compatible DB changes during rollout
-- Separate migration step; test rollback paths
+## Zero-Downtime & Migrations (if applicable)
+[Health checks, graceful shutdown, migration ordering]
 
 ## Rollback
-- Keep previous version ready; automate revert
-- Rollback faster than fix-forward; document triggers
+[Strategy and triggers, not step-by-step runbooks]
 
 ## Configuration & Secrets
-- 12-factor config via env; never commit secrets
-- Secret manager; rotate; least privilege; audit access
-- Validate required env vars at startup
+[Config management, secret storage, validation]
 
 ## Health & Monitoring
-- Endpoints: `/health`, `/health/live`, `/health/ready`
-- Monitor latency, error rate, throughput, saturation
-- Alerts on SLO breaches/spikes; tune to avoid fatigue
+[Health endpoints and alerting philosophy, not metric catalogs]
 
-## Incident Response & DR
-- Standard playbook: detect → assess → mitigate → communicate → resolve → post-mortem
-- Backups with retention; test restore; defined RPO/RTO
+## Incident Response & DR (if applicable)
+[Response expectations and recovery targets, not playbooks]
+
+## Common Mistakes
+[Deployment mistakes your team has made]
 
 ---
 _Focus on rollout patterns and safeguards. No provider-specific steps._

@@ -141,6 +141,7 @@ Never include:
 - **Concrete examples**: Show patterns with code
 - **Explain rationale**: Why decisions were made
 - **Maintainable size**: 100-200 lines typical
+- **Common mistakes**: Record known pitfalls and forbidden patterns
 
 ### Preservation (when updating)
 

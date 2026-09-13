@@ -22,8 +22,11 @@
 ### Code Quality
 [e.g., ESLint, Prettier rules]
 
+### Forbidden Patterns
+[Patterns banned in this codebase and why, e.g., no default exports, no `any` in public APIs]
+
 ### Testing
-[e.g., Jest, coverage requirements]
+[Test framework in use, e.g., Jest]
 
 ## Development Environment
 
