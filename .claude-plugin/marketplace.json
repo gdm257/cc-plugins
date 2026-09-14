@@ -24,11 +24,15 @@
       "source": "./plugins/cc-sdd-skills"
     },
     {
+      "name": "filelu-skills",
+      "source": "./plugins/filelu-skills"
+    },
+    {
       "name": "openspec-claude-skills",
       "source": "./plugins/openspec-claude-skills"
     },
     {
-      "name": "openspec-openspec-skills",
+      "name": "openspec-opencode-skills",
       "source": "./plugins/openspec-opencode-skills"
     },
     {
