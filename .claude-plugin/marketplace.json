@@ -56,6 +56,10 @@
       "source": "./plugins/trellis"
     },
     {
+      "name": "claude-code-hooks",
+      "source": "./plugins/claude-code-hooks"
+    },
+    {
       "name": "php-lsp-bunx",
       "description": "PHP language server (Intelephense) for code intelligence",
       "version": "1.0.0",

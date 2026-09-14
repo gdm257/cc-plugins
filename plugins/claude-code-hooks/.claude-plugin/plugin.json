@@ -1,0 +1,7 @@
+{
+  "name": "claude-code-hooks",
+  "description": "let omp support claude code hooks",
+  "category": "development",
+  "version": "1.0.0",
+  "agents": ["./agents/", "./subagents/"]
+}
