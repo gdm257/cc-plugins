@@ -21,12 +21,14 @@ If the upstream remote is missing, take the URL from the "forked from" line on t
 
 ## Step 2: Locate the latest explicit version
 
-The upstream's latest "explicit version" = one concrete commit. Try in order:
+The upstream's latest "explicit version" = one concrete commit. Merge targets are always an explicit version, never the latest commit: an upstream that ships no version bump (no new tag, no `version` field change) is not stable enough to merge — track HEAD and stop.
+
+Locate it in order:
 
 1. **git tags**: `git ls-remote --tags upstream`, take the highest semver `vX.Y.Z` (ignore `^{}` lines), resolve the sha with `git rev-parse vX.Y.Z^{commit}`.
-2. **Embedded version numbers**: with no tags, read the upstream `package.json` `version`, `Cargo.toml`, or the first `CHANGELOG.md` entry, then find the commit that bumped it in `git log upstream/main`.
+2. **Embedded version numbers**: with no tags, read the upstream `package.json` `version`, `Cargo.toml`, or the first `CHANGELOG.md` entry, then find the commit that bumped it in `git log upstream/main`. If the newest bump is older than recent upstream commits, merge the bump commit — those later commits stay unmerged until the next bump.
 
-**Done when**: exactly one version commit is fixed (sha + version), and you can say whether it came from a tag or which file.
+**Done when**: exactly one version commit is fixed (sha + version), you can say whether it came from a tag or which file, or you have reported "no version bump since the last merge" and stopped.
 
 ## Step 3: Find the last synced point, fix the merge range
 
@@ -67,4 +69,4 @@ A squash merge compresses the range into one new commit with no upstream ancestr
 
 ### Version source priority
 
-tags > embedded version numbers. A tag binds to a commit directly; an embedded version needs an extra hop to locate the bump commit and may lag behind HEAD — merge a release version, not HEAD, for predictable behavior.
+tags > embedded version numbers. A tag binds to a commit directly; an embedded version needs an extra hop to locate the bump commit and may lag behind HEAD — merge the bump, not what trails after it.
