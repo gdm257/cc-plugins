@@ -1,15 +1,15 @@
 ---
 name: git-merge-upstream
 description: >
-  Merge the latest upstream release into a fork as a single squash commit, keeping
-  linear history. Use when asked to sync or merge upstream, update a fork to the
-  latest upstream version (e.g. vX.Y.Z), or to figure out which upstream commits a
-  stale fork still needs.
+  Merge the latest stable upstream release into a fork as a single squash commit,
+  keeping linear history. Use when asked to sync or merge upstream, update a fork
+  to the latest stable upstream version (e.g. vX.Y.Z), or to figure out which
+  upstream commits a stale fork still needs.
 ---
 
 # Merge upstream latest
 
-Merge the upstream repo's latest explicit version into the fork: one squash commit, linear history. Five steps, each ending on its own sha evidence.
+Merge the upstream repo's latest stable version into the fork: one squash commit, linear history. Five steps, each ending on its own sha evidence.
 
 ## Step 1: Find the remotes
 
@@ -19,16 +19,16 @@ If the upstream remote is missing, take the URL from the "forked from" line on t
 
 **Done when**: the upstream remote exists and `git fetch upstream --tags` succeeds.
 
-## Step 2: Locate the latest explicit version
+## Step 2: Locate the latest stable version
 
-The upstream's latest "explicit version" = one concrete commit. Merge targets are always an explicit version, never the latest commit: an upstream that ships no version bump (no new tag, no `version` field change) is not stable enough to merge — track HEAD and stop.
+The upstream's latest "stable version" = the newest release that is not a prerelease, one concrete commit. A prerelease (`vX.Y.Z-rc.N`, `-beta.N`, `-alpha.N`, `-dev`) is never the merge target, even when it is the newest tag. Merge targets are always a stable version, never the latest commit: an upstream that ships no version bump (no new tag, no `version` field change) is not stable enough to merge — track HEAD and stop.
 
 Locate it in order:
 
-1. **git tags**: `git ls-remote --tags upstream`, take the highest semver `vX.Y.Z` (ignore `^{}` lines), resolve the sha with `git rev-parse vX.Y.Z^{commit}`.
+1. **git tags**: `git ls-remote --tags upstream`, take the highest semver `vX.Y.Z`, skipping prerelease tags and `^{}` lines, resolve the sha with `git rev-parse vX.Y.Z^{commit}`.
 2. **Embedded version numbers**: with no tags, read the upstream `package.json` `version`, `Cargo.toml`, or the first `CHANGELOG.md` entry, then find the commit that bumped it in `git log upstream/main`. If the newest bump is older than recent upstream commits, merge the bump commit — those later commits stay unmerged until the next bump.
 
-**Done when**: exactly one version commit is fixed (sha + version), you can say whether it came from a tag or which file, or you have reported "no version bump since the last merge" and stopped.
+**Done when**: exactly one stable version commit is fixed (sha + version), you can say whether it came from a tag or which file, or you have reported "no version bump since the last merge" and stopped.
 
 ## Step 3: Find the last synced point, fix the merge range
 
