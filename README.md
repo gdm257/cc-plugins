@@ -22,11 +22,12 @@ Collection of Claude Code plugins (LSP, MCP, hooks, skills, subagents).
 
 | Plugin | Description | Dependencies |
 | ------ | ----------- | ------------ |
-| **agent-skills** | General-purpose skills: Crawlee web-scraping reference, OpenCode plugin development guide, and skill-discovery meta-skill | `npx`, `bun` |
+| **agent-skills** | General-purpose skills: Crawlee web-scraping reference, OpenCode plugin development guide, skill-discovery meta-skill, upstream fork squash-merge guide, and ocr review-rule authoring | `npx`, `bun` |
 | **archon-skills** | Archon CLI integration — run AI workflows in isolated git worktrees for parallel development, with DAG-based YAML workflow authoring docs | `archon` CLI |
 | **steering-skills** | Maintains `.claude/rules/steering/` as persistent project memory — bootstraps core steering documents and creates custom domain-specific files | None |
 | **openspec-claude-skills** | OpenSpec artifact-driven workflow for Claude Code — structured change lifecycle from proposal through design/specs/tasks to implementation, verification, and archival | `openspec` CLI |
 | **openspec-opencode-skills** | Same OpenSpec workflow adapted for the OpenCode agent platform | `openspec` CLI |
+| **beads-plan-skills** | beads-plan bridge between OpenSpec and beads — compiles an OpenSpec change's tasks.md into a tiered bead molecule (`plan`), dispatches tasks by model tier, and syncs execution progress back to tasks.md (`view`) | `beads` CLI (`bd`) |
 | **cc-sdd-skills** | Kiro-style spec-driven development skills — spec authoring (requirements/design/tasks), validation, steering, and completion verification with a spec-reviewer subagent | None |
 | **trellis** | Trellis-managed workflow — task lifecycle from brainstorm through implementation, quality checks, and session journaling via `.trellis/` | None |
 | **claude-code-hooks** | Runs Claude Code hooks from Claude settings files inside omp | None |
