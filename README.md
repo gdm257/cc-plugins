@@ -24,6 +24,7 @@ Collection of Claude Code plugins (LSP, MCP, hooks, skills, subagents).
 | ------ | ----------- | ------------ |
 | **agent-skills** | General-purpose skills: Crawlee web-scraping reference, OpenCode plugin development guide, skill-discovery meta-skill, upstream fork squash-merge guide, and ocr review-rule authoring | `npx`, `bun` |
 | **archon-skills** | Archon CLI integration — run AI workflows in isolated git worktrees for parallel development, with DAG-based YAML workflow authoring docs | `archon` CLI |
+| **android-skills** | Agent-first Android iteration on Windows — variant-qualified Gradle builds with failure triage, headless emulator/AVD control with reliable boot detection, and adb logcat crash triage via package-to-pid filtering | None |
 | **steering-skills** | Maintains `.claude/rules/steering/` as persistent project memory — bootstraps core steering documents and creates custom domain-specific files | None |
 | **openspec-claude-skills** | OpenSpec artifact-driven workflow for Claude Code — structured change lifecycle from proposal through design/specs/tasks to implementation, verification, and archival | `openspec` CLI |
 | **openspec-opencode-skills** | Same OpenSpec workflow adapted for the OpenCode agent platform | `openspec` CLI |
