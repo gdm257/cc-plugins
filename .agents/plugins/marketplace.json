@@ -33,17 +33,10 @@
       }
     },
     {
-      "name": "openspec-claude-skills",
+      "name": "openspec-skills",
       "source": {
         "source": "local",
-        "path": "./plugins/openspec-claude-skills"
-      }
-    },
-    {
-      "name": "openspec-openspec-skills",
-      "source": {
-        "source": "local",
-        "path": "./plugins/openspec-opencode-skills"
+        "path": "./plugins/openspec-skills"
       }
     },
     {
