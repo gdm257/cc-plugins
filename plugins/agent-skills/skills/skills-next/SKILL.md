@@ -1,7 +1,7 @@
 ---
 name: skills-next
 description: This skill should be used when the user asks to "use skills", "skills-next", "check available skills", "load skills", "what skills are available", or wants to ensure all relevant skills are considered for the next task.
-version: 1.0.0
+disable-model-invocation: true
 ---
 
 # Skills-Next: Enhanced Skill Discovery
