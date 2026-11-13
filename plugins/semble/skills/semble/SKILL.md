@@ -1,6 +1,6 @@
 ---
 name: semble
-description: Code search for the current repository. Use this before Grep, Glob or find whenever you need to locate code: where something is implemented, which file defines a function, class or symbol, how a feature works, or where docs and config live.
+description: Code search for the current repository. Use this before Grep, Glob or find whenever you need to locate code, such as where something is implemented, which file defines a function, class or symbol, how a feature works, or where docs and config live.
 ---
 
 Use `semble search` to find code by describing what it does or naming a symbol/identifier, instead of grep:
@@ -33,7 +33,7 @@ semble find-related src/auth.py 42 ./my-project
 semble search "invoice endpoint" ./service-a ../service-b
 ```
 
-If `semble` is not on `$PATH`, use `uvx --from "semble[mcp]==0.7.1" semble` in its place.
+If `semble` is not on `$PATH`, use `uvx --from "semble[mcp]==0.7.3" semble` in its place.
 
 ### Workflow
 
