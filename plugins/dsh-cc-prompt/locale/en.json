@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Claude Code core prompt",
+    "description": "Registers Claude Code's core agent guidance (communication, autonomy, end-of-turn discipline) as a global system-prompt section at order 100, before DSH's plan-policy and tool-guidance sections. Applies to every preset and subagent in this profile.",
+    "detail": "docs/DETAIL.md"
+  }
+}

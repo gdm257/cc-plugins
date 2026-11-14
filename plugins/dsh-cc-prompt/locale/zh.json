@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Claude Code 核心提示词",
+    "description": "将 Claude Code 的核心 agent 指引（沟通方式、自主执行、收尾纪律）注册为全局 system prompt section（order 100，位于 DSH 的 plan policy 与工具指引 section 之前）。对本 profile 内所有 preset 与 subagent 生效。",
+    "detail": "docs/DETAIL.md"
+  }
+}
