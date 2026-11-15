@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Stagehand 浏览器 provider",
+    "description": "挂载 browser-use registry 与 experimental 的 Stagehand native provider（每个 live Session 六个固定工具 stagehand_*）。默认停用：需先配置 Stagehand 模型 API key。与其他 browser-use provider 互斥。",
+    "detail": "docs/DETAIL.md"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Chrome DevTools browser-use provider",
+    "description": "Mounts the browser-use registry plus the experimental chrome-devtools-mcp provider. Each live Session gets its own Chromium via chrome-devtools-mcp with upstream DevTools tools injected. Exclusive with other browser-use providers.",
+    "detail": "docs/DETAIL.md"
+  }
+}

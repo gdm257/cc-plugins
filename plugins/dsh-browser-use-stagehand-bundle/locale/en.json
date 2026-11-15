@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Stagehand browser-use provider",
+    "description": "Mounts the browser-use registry plus the experimental Stagehand native provider (stagehand_act/extract/navigate/observe/screenshot/tabs per live Session). Ships disabled: configure a Stagehand model API key first. Exclusive with other browser-use providers.",
+    "detail": "docs/DETAIL.md"
+  }
+}

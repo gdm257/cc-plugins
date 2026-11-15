@@ -1,0 +1,7 @@
+- insert:
+    - id: browser-use
+      name: '@deepseek-ai/dsh-browser-use'
+    - id: browser-use-chrome-devtools
+      name: '@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp'
+      config:
+        mode: launch

@@ -1,0 +1,7 @@
+- insert:
+    - id: browser-use
+      name: '@deepseek-ai/dsh-browser-use'
+    # 启用前先填 model.modelName 与 model.apiKey，再把 disabled 改为 false
+    - id: browser-use-stagehand
+      name: '@deepseek-ai/dsh-experimental-browser-use-stagehand-native'
+      disabled: true

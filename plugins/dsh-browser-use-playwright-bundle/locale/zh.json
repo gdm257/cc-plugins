@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Playwright 浏览器 provider",
+    "description": "挂载 browser-use registry 与 experimental 的 Playwright MCP provider。每个 live Session 经 @playwright/mcp 启动专属 Chromium，并注入上游 Playwright 工具。与其他 browser-use provider 互斥。",
+    "detail": "docs/DETAIL.md"
+  }
+}
