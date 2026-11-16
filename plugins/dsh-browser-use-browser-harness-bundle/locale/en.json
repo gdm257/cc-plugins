@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "browser-harness browser-use provider",
+    "description": "Registers a browser-harness provider on the browser-use registry. Each live Session lazily gets a dedicated Browser lane (named daemon) on one shared Dedicated Chrome (persistent user-data-dir, headless by default, logins shared across Sessions) plus raw-Python browser_run / browser_status tools. Config: proxy (optional; the Dedicated Chrome does not inherit the system proxy, set it explicitly when needed), chromePath (optional, Chrome/Edge auto-detected), headless (default true). Risk: browser_run executes arbitrary Python without a sandbox; install only where that is acceptable. Exclusive with other browser-use providers.",
+    "detail": "docs/DETAIL.md"
+  }
+}

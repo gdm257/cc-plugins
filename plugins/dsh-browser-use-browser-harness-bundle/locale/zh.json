@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "browser-harness 浏览器 provider",
+    "description": "在 browser-use registry 上注册名为 browser-harness 的 provider。每个 live Session 懒起一条专属 Browser lane（具名 daemon），共享一台 Dedicated Chrome（持久 user-data-dir、默认 headless、登录态全 Session 复用），并注入裸 Python 的 browser_run / browser_status 工具。Config：proxy（可选；Dedicated Chrome 不继承系统代理，需走代理必须显式配置）、chromePath（可选，默认探测 Chrome/Edge）、headless（默认 true）。风险：browser_run 执行任意 Python 且无沙箱，仅宜在信任的环境安装。与其他 browser-use provider 互斥。",
+    "detail": "docs/DETAIL.zh.md"
+  }
+}

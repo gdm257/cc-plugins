@@ -1,0 +1,6 @@
+- insert:
+    - id: browser-use
+      name: '@deepseek-ai/dsh-browser-use'
+    - id: browser-use-browser-harness
+      name: '@gdm257/dsh-browser-use-browser-harness-bundle'
+      config: {}

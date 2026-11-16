@@ -1,0 +1,28 @@
+{
+  "name": "@gdm257/dsh-browser-use-browser-harness-bundle",
+  "version": "0.1.2",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "lib/*.mjs", "cordis.patch.yml", "locale/*.json", "icon.svg", "docs"],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "@deepseek-ai/dsh-agent": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-system-prompt": "0.2.2-rc.3"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-browser-use": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-experimental-browser-use-runtime": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.3",
+    "@deepseek-ai/schemastery": "3.19.0"
+  }
+}
