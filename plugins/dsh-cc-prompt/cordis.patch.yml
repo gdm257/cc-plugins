@@ -1,4 +1,4 @@
 - insert:
     - id: cc-prompt
-      name: '@local/dsh-cc-prompt'
+      name: '@gdm257/dsh-cc-prompt'
       config: {}
