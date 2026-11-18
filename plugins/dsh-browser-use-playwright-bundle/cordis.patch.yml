@@ -5,3 +5,6 @@
       name: '@deepseek-ai/dsh-experimental-browser-use-playwright-mcp'
       config:
         mode: launch
+    - id: browser-use-playwright-bootstrap
+      name: '@gdm257/dsh-browser-use-playwright-bundle'
+      config: {}

@@ -49,6 +49,7 @@ provider 的 Config 必填 `model`，无法带默认值出厂，因此本包默�
 ## 前提与互斥
 
 - 一个 Stagehand 支持的模型 API key（自备）。
+- 预装系统稳定版 Chrome：该 provider 从不下载浏览器，只按系统标准路径寻找稳定版 Chrome（Windows 常见如 Program Files 下的 Google Chrome），找不到即启动失败。如不想手动安装，可改用会自动补装浏览器的 `dsh-browser-use-playwright-bundle` 或 `dsh-browser-use-chrome-devtools-bundle`。
 - browser-use provider 全局互斥：同一时间只能启用一个 provider。换用 `dsh-browser-use-playwright-bundle` 或 `dsh-browser-use-chrome-devtools-bundle` 前，先在 Plugins 中禁用或移除本 bundle。
 - experimental 包，Windows 上未经官方验证。
 
