@@ -1,6 +1,6 @@
 {
   "name": "@gdm257/dsh-browser-use-chrome-devtools-bundle",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "type": "module",
   "exports": {
@@ -15,7 +15,7 @@
     }
   },
   "dependencies": {
-    "@deepseek-ai/dsh-browser-use": "0.2.2-rc.3",
-    "@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp": "0.2.2-rc.3"
+    "@deepseek-ai/dsh-browser-use": ">=0.2.2-0 <0.2.3-0",
+    "@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp": ">=0.2.2-0 <0.2.3-0"
   }
 }

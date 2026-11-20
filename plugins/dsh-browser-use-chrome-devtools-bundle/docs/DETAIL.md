@@ -20,7 +20,7 @@
 
 `apply` 触发自举后即返回（fire-and-forget），不等待补装完成，激活不会被最长 10 分钟的下载阻塞。补装失败或超时（默认 10 分钟）只记含手动修复命令 `npx puppeteer browsers install chrome@stable` 的错误日志，不抛出、不阻断插件注册；首次工具调用会给出上游错误，修复后重载即可。
 
-已知上游限制：`chrome-devtools-mcp@1.9.0`（provider `0.2.2-rc.3` 锁定）在未配置 `executablePath` 时只走系统 stable Chrome 发现，不回退 puppeteer 缓存。因此自举补装的 Chrome for Testing 需在 `browser-use-chrome-devtools` 行 config 里设置 `executablePath` 指向日志中给出的缓存路径才会被 provider 使用；已装系统 Chrome 的机器不受影响。
+已知上游限制：`chrome-devtools-mcp@1.9.0`（provider `0.2.2-rc.5` 锁定）在未配置 `executablePath` 时只走系统 stable Chrome 发现，不回退 puppeteer 缓存。因此自举补装的 Chrome for Testing 需在 `browser-use-chrome-devtools` 行 config 里设置 `executablePath` 指向日志中给出的缓存路径才会被 provider 使用；已装系统 Chrome 的机器不受影响。
 
 ## 配置
 
@@ -41,9 +41,9 @@ attach 模式：`mode: attach` + `endpoint`（HTTP(S)/WS(S) 调试端点），�
 
 ## 依赖
 
-- npm（安装时自动拉取）：`@deepseek-ai/dsh-browser-use@0.2.2-rc.3`、`@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp@0.2.2-rc.3`（内含 `chrome-devtools-mcp`）。
-- DSH peer（由运行时提供）：`@deepseek-ai/cordis` `~4.1.0`；`dsh-agent` / `dsh-tools` / `dsh-system-prompt` / `dsh-working-directory` `0.2.2-rc.3`。
-- 依赖版本锁 `0.2.2-rc.3`：与本机 DSH 版本一致才能通过安装器的 peer 校验；升级 DSH 时需同步更新。
+- npm（安装时自动拉取）：`@deepseek-ai/dsh-browser-use@>=0.2.2-0 <0.2.3-0`、`@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp@>=0.2.2-0 <0.2.3-0`（内含 `chrome-devtools-mcp`）。
+- DSH peer（由运行时提供）：`@deepseek-ai/cordis` `~4.1.0`；`dsh-agent` / `dsh-tools` / `dsh-system-prompt` / `dsh-working-directory` `>=0.2.2-0 <0.2.3-0`。
+- 依赖版本范围 `>=0.2.2-0 <0.2.3-0`：0.2.2 系列内任意版本（含 alpha、rc 与稳定版）的 DSH 均可通过安装器的 peer 校验；DSH 进入 0.2.3 后需同步更新。
 
 ## 前提与互斥
 

@@ -42,9 +42,9 @@ provider 的 Config 必填 `model`，无法带默认值出厂，因此本包默�
 
 ## 依赖
 
-- npm（安装时自动拉取）：`@deepseek-ai/dsh-browser-use@0.2.2-rc.3`、`@deepseek-ai/dsh-experimental-browser-use-stagehand-native@0.2.2-rc.3`（内含 Stagehand SDK 与 `@puppeteer/browsers`）。
-- DSH peer（由运行时提供）：`@deepseek-ai/cordis` `~4.1.0`；`dsh-agent` / `dsh-tools` / `dsh-system-prompt` / `dsh-working-directory` `0.2.2-rc.3`。
-- 依赖版本锁 `0.2.2-rc.3`：与本机 DSH 版本一致才能通过安装器的 peer 校验；升级 DSH 时需同步更新。
+- npm（安装时自动拉取）：`@deepseek-ai/dsh-browser-use@>=0.2.2-0 <0.2.3-0`、`@deepseek-ai/dsh-experimental-browser-use-stagehand-native@>=0.2.2-0 <0.2.3-0`（内含 Stagehand SDK 与 `@puppeteer/browsers`）。
+- DSH peer（由运行时提供）：`@deepseek-ai/cordis` `~4.1.0`；`dsh-agent` / `dsh-tools` / `dsh-system-prompt` / `dsh-working-directory` `>=0.2.2-0 <0.2.3-0`。
+- 依赖版本范围 `>=0.2.2-0 <0.2.3-0`：0.2.2 系列内任意版本（含 alpha、rc 与稳定版）的 DSH 均可通过安装器的 peer 校验；DSH 进入 0.2.3 后需同步更新。
 
 ## 前提与互斥
 

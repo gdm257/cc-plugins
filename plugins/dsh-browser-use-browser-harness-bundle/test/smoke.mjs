@@ -79,13 +79,13 @@ test('manifest pins peers and dependencies per spec', () => {
   assert.equal(manifest.dsh.bundle.patch, './cordis.patch.yml')
   assert.deepEqual(manifest.peerDependencies, {
     '@deepseek-ai/cordis': '~4.1.0',
-    '@deepseek-ai/dsh-agent': '0.2.2-rc.3',
-    '@deepseek-ai/dsh-system-prompt': '0.2.2-rc.3',
+    '@deepseek-ai/dsh-agent': '>=0.2.2-0 <0.2.3-0',
+    '@deepseek-ai/dsh-system-prompt': '>=0.2.2-0 <0.2.3-0',
   })
   assert.deepEqual(manifest.dependencies, {
-    '@deepseek-ai/dsh-browser-use': '0.2.2-rc.3',
-    '@deepseek-ai/dsh-experimental-browser-use-runtime': '0.2.2-rc.3',
-    '@deepseek-ai/dsh-tools': '0.2.2-rc.3',
+    '@deepseek-ai/dsh-browser-use': '>=0.2.2-0 <0.2.3-0',
+    '@deepseek-ai/dsh-experimental-browser-use-runtime': '>=0.2.2-0 <0.2.3-0',
+    '@deepseek-ai/dsh-tools': '>=0.2.2-0 <0.2.3-0',
     '@deepseek-ai/schemastery': '3.19.0',
   })
 })
